@@ -1,42 +1,42 @@
 {
-  "name": "k-wojcik/hassio-cam-addons",
-  "image": "k-wojcik/hassio-cam-addons-{arch}",
+  "name": "Cam proxy",
+  "image": "kawojcik/hassio-cam-addons-{arch}",
   "version": "1.0",
   "description": "Home Assistant Add-on for interacting with IP cams",
-  "slug": "dvr163",
+  "slug": "camproxy",
   "url": "https://github.com/k-wojcik/hassio-cam-addons",
   "startup": "application",
   "boot": "auto",
   "homeassistant_api": "true",
   "options": {
     "cams": [
-		{ 
-			"key": "cam1",
-			"proxy": {
-				"ip": "192.168.0.10",
-				"port": 80,
-				"user": "admin",
-				"password": "",
-				"channel": 0,
-				"stream": 0
-			}
-		}
-	]
+      {
+        "key": "cam1",
+        "proxy": {
+          "ip": "192.168.0.10",
+          "port": 80,
+          "user": "admin",
+          "password": "",
+          "channel": 0,
+          "stream": 0
+        }
+      }
+    ]
   },
   "schema": {
     "cams": [
-		{ 
-			"key": "str",
-			"proxy": {
-				"ip": "str",
-				"port": "int",
-				"user": "str",
-				"password": "str",
-				"channel": "int",
-				"stream": "int"
-			}
-		}
-	]
+      {
+        "key": "str",
+        "proxy": {
+          "ip": "str",
+          "port": "int",
+          "user": "str",
+          "password": "str",
+          "channel": "int",
+          "stream": "int"
+        }
+      }
+    ]
   },
   "ports": {
     "5445/tcp": 5445

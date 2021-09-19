@@ -2,20 +2,22 @@
 # > set OPTIONS_PATH=%cd%\camproxy\app\dev\env\options.json
 # > python stream.py | ffplay -i pipe:
 
+from shared import logger, options
 import socket
 import time
 import datetime
 import sys
 
-
 def main(camId):
+    logger.info("Start stream for cam: " + camId)
 
     if sys.version_info.major < 3:
         sys.exit("Python 3 is required.\n")
 
-	cam_config = list(filter(lambda x: camId == x.key, options["cams"]))[0]
-	channel_number = cam_config["channel"]
-	stream = cam_config["stream"]
+    cam_config = [x for x in options["cams"] if x['key'] == camId][0]["proxy"]
+    
+    channel_number = cam_config["channel"]
+    stream = cam_config["stream"]
     TCP_IP = cam_config["ip"]
     TCP_PORT = cam_config["port"]
     USERNAME = cam_config["user"].encode()
@@ -67,6 +69,6 @@ def main(camId):
 # Support directly calling from command line with a file path containing the email_data
 if __name__ == "__main__":
     stdout = sys.stdout.buffer
-    generator = main(0, 0)
+    generator = main(sys.argv[1])
     while True:
         stdout.write(next(generator))
