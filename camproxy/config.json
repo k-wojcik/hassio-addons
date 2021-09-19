@@ -1,0 +1,51 @@
+{
+  "name": "k-wojcik/hassio-cam-addons",
+  "image": "k-wojcik/hassio-cam-addons-{arch}",
+  "version": "1.0",
+  "description": "Home Assistant Add-on for interacting with IP cams",
+  "slug": "dvr163",
+  "url": "https://github.com/k-wojcik/hassio-cam-addons",
+  "startup": "application",
+  "boot": "auto",
+  "homeassistant_api": "true",
+  "options": {
+    "cams": [
+		{ 
+			"key": "cam1",
+			"proxy": {
+				"ip": "192.168.0.10",
+				"port": 80,
+				"user": "admin",
+				"password": "",
+				"channel": 0,
+				"stream": 0
+			}
+		}
+	]
+  },
+  "schema": {
+    "cams": [
+		{ 
+			"key": "str",
+			"proxy": {
+				"ip": "str",
+				"port": "int",
+				"user": "str",
+				"password": "str",
+				"channel": "int",
+				"stream": "int"
+			}
+		}
+	]
+  },
+  "ports": {
+    "5445/tcp": 5445
+  },
+  "arch": [
+    "amd64",
+    "armv7",
+    "armhf",
+    "i386",
+    "aarch64"
+  ]
+}
