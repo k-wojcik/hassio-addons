@@ -16,6 +16,7 @@ RUN pip install -r requirements.txt && \
     ln -s /usr/bin/python3 /usr/bin/python
 
 COPY app /app
+RUN chmod a+x /app/start.sh
 
 # Run the app
 CMD ["/app/start.sh"]
