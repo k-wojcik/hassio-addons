@@ -14,7 +14,7 @@ def main(camId):
     if sys.version_info.major < 3:
         sys.exit("Python 3 is required.\n")
 
-    cam_config = [x for x in options["cams"] if x['key'] == camId][0]["proxy"]
+    cam_config = [x for x in options["cams"] if x['key'] == camId][0]
     
     channel_number = cam_config["channel"]
     stream = cam_config["stream"]
