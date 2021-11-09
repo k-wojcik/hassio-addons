@@ -21,5 +21,6 @@ RUN apt-get update \
 ENV CONFIG_PATH /data/options.json
 
 COPY run.sh /
+RUN chmod a+x /run.sh
 
 ENTRYPOINT ["/run.sh"]
