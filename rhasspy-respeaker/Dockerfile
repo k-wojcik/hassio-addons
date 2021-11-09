@@ -3,6 +3,7 @@ FROM rhasspy/rhasspy:2.5.11
 ENV LANG C.UTF-8
 
 RUN mkdir -p /var/cache/apt/amd64/archives/partial
+RUN mkdir -p /var/cache/apt/arm64/archives/partial
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
