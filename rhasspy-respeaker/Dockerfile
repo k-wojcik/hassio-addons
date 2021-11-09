@@ -12,6 +12,7 @@ RUN apt-get update \
       dkms \
       i2c-tools \
       libasound2-plugins \
+      gstreamer1.0-plugins-base-apps \
     && git clone "https://github.com/respeaker/seeed-voicecard" \
     && cd seeed-voicecard \
     && chmod a+x ./install.sh \

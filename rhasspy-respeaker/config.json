@@ -22,7 +22,6 @@
         "asoundrc": "",
         "http_root": ""
     },
-    "audio": true,
     "usb": true,
     "ports": {
         "12101/tcp": 12101,
